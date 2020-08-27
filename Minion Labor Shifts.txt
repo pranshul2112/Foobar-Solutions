@@ -1,0 +1,12 @@
+def solution(data, n):
+    dic = {}
+
+    for i in data:
+        dic[i] = dic.get(i, 0) + 1
+
+    for i in dic:
+        if dic[i] > n:
+            for j in range(dic[i]):
+                data.remove(i)
+
+    return data
